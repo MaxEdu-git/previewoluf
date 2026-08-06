@@ -8,12 +8,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  buildSlots,
-  createReservation,
-  reservationSchema,
-  RESERVATION_RULES,
-} from "@/lib/reservations.functions";
+import { buildSlots, reservationSchema, RESERVATION_RULES } from "@/lib/forms-shared";
+import { createReservation } from "@/lib/reservations.functions";
 import { OCCASIONS, SITE, whatsappLink } from "@/lib/site-content";
 
 function toIsoDate(date: Date) {
