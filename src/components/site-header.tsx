@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -6,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 import { NAV_ITEMS, SITE } from "@/lib/site-content";
 import { FuloLogo } from "@/components/fulo-logo";
+import { NavLink } from "@/components/nav-link";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -37,8 +37,8 @@ export function SiteHeader() {
       )}
     >
       <div className="section-shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3">
-        <Link
-          to="/"
+        <NavLink
+          href="/"
           className="flex min-w-0 items-center gap-3"
           aria-label={`${SITE.name} — página inicial`}
         >
@@ -61,14 +61,14 @@ export function SiteHeader() {
               {SITE.subtitle}
             </span>
           </span>
-        </Link>
+        </NavLink>
 
         <div className="flex items-center gap-2">
           <nav className="hidden items-center gap-1 xl:flex" aria-label="Navegação principal">
             {NAV_ITEMS.map((item) => (
-              <Link
+              <NavLink
                 key={item.href}
-                to={item.href}
+                href={item.href}
                 className={cn(
                   "rounded-full px-3 py-2 text-sm font-medium transition-colors",
                   scrolled
@@ -77,7 +77,7 @@ export function SiteHeader() {
                 )}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
 
@@ -96,7 +96,7 @@ export function SiteHeader() {
           </button>
 
           <Button asChild size="lg" className="hidden min-h-11 rounded-full sm:inline-flex">
-            <Link to="/reservas">Reservar mesa</Link>
+            <NavLink href="/reservas">Reservar mesa</NavLink>
           </Button>
 
           <button
@@ -139,21 +139,21 @@ export function SiteHeader() {
 
             <nav className="mt-2 flex flex-col" aria-label="Navegação móvel">
               {NAV_ITEMS.map((item) => (
-                <Link
+                <NavLink
                   key={item.href}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="min-h-12 rounded-xl px-3 py-3 text-base font-medium hover:bg-accent"
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               ))}
             </nav>
 
             <Button asChild size="lg" className="mt-2 min-h-12 rounded-full">
-              <Link to="/reservas" onClick={() => setOpen(false)}>
+              <NavLink href="/reservas" onClick={() => setOpen(false)}>
                 Reservar mesa
-              </Link>
+              </NavLink>
             </Button>
 
             <button
