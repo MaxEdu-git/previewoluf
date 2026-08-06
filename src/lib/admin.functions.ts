@@ -61,11 +61,16 @@ export const updateReservation = createServerFn({ method: "POST" })
       .parse(input),
   )
   .handler(async ({ data, context }) => {
-    const patch: Record<string, unknown> = {};
-    if (data.status) patch["status"] = data.status;
-    if (data.internalNotes !== undefined) patch["internal_notes"] = data.internalNotes;
-    if (data.reservationDate) patch["reservation_date"] = data.reservationDate;
-    if (data.reservationTime) patch["reservation_time"] = data.reservationTime;
+    const patch: {
+      status?: (typeof STATUSES)[number];
+      internal_notes?: string;
+      reservation_date?: string;
+      reservation_time?: string;
+    } = {};
+    if (data.status) patch.status = data.status;
+    if (data.internalNotes !== undefined) patch.internal_notes = data.internalNotes;
+    if (data.reservationDate) patch.reservation_date = data.reservationDate;
+    if (data.reservationTime) patch.reservation_time = data.reservationTime;
 
     const { error } = await context.supabase.from("reservations").update(patch).eq("id", data.id);
     if (error) throw new Error("Não foi possível atualizar a reserva.");
