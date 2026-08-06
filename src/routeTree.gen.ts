@@ -11,7 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PedidosRouteImport } from './routes/pedidos'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as PoliticaDeReservasRouteImport } from './routes/politica-de-reservas'
 import { Route as ReservasRouteImport } from './routes/reservas'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +26,86 @@ const PedidosRoute = PedidosRouteImport.update({
   path: '/pedidos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeReservasRoute = PoliticaDeReservasRouteImport.update({
+  id: '/politica-de-reservas',
+  path: '/politica-de-reservas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReservasRoute = ReservasRouteImport.update({
   id: '/reservas',
   path: '/reservas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pedidos': typeof PedidosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/politica-de-reservas': typeof PoliticaDeReservasRoute
   '/reservas': typeof ReservasRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pedidos': typeof PedidosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/politica-de-reservas': typeof PoliticaDeReservasRoute
   '/reservas': typeof ReservasRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/pedidos': typeof PedidosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/politica-de-reservas': typeof PoliticaDeReservasRoute
   '/reservas': typeof ReservasRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pedidos' | '/reservas'
+  fullPaths:
+    | '/'
+    | '/pedidos'
+    | '/politica-de-privacidade'
+    | '/politica-de-reservas'
+    | '/reservas'
+    | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pedidos' | '/reservas'
-  id: '__root__' | '/' | '/pedidos' | '/reservas'
+  to:
+    | '/'
+    | '/pedidos'
+    | '/politica-de-privacidade'
+    | '/politica-de-reservas'
+    | '/reservas'
+    | '/termos-de-uso'
+  id:
+    | '__root__'
+    | '/'
+    | '/pedidos'
+    | '/politica-de-privacidade'
+    | '/politica-de-reservas'
+    | '/reservas'
+    | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PedidosRoute: typeof PedidosRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  PoliticaDeReservasRoute: typeof PoliticaDeReservasRoute
   ReservasRoute: typeof ReservasRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +124,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PedidosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-reservas': {
+      id: '/politica-de-reservas'
+      path: '/politica-de-reservas'
+      fullPath: '/politica-de-reservas'
+      preLoaderRoute: typeof PoliticaDeReservasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reservas': {
       id: '/reservas'
       path: '/reservas'
       fullPath: '/reservas'
       preLoaderRoute: typeof ReservasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,7 +158,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PedidosRoute: PedidosRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  PoliticaDeReservasRoute: PoliticaDeReservasRoute,
   ReservasRoute: ReservasRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
