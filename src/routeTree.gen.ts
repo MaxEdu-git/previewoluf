@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PedidosRouteImport } from './routes/pedidos'
 import { Route as ReservasRouteImport } from './routes/reservas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedidosRoute = PedidosRouteImport.update({
+  id: '/pedidos',
+  path: '/pedidos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReservasRoute = ReservasRouteImport.update({
@@ -25,27 +31,31 @@ const ReservasRoute = ReservasRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/pedidos': typeof PedidosRoute
   '/reservas': typeof ReservasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/pedidos': typeof PedidosRoute
   '/reservas': typeof ReservasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/pedidos': typeof PedidosRoute
   '/reservas': typeof ReservasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/reservas'
+  fullPaths: '/' | '/pedidos' | '/reservas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/reservas'
-  id: '__root__' | '/' | '/reservas'
+  to: '/' | '/pedidos' | '/reservas'
+  id: '__root__' | '/' | '/pedidos' | '/reservas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PedidosRoute: typeof PedidosRoute
   ReservasRoute: typeof ReservasRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedidos': {
+      id: '/pedidos'
+      path: '/pedidos'
+      fullPath: '/pedidos'
+      preLoaderRoute: typeof PedidosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reservas': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PedidosRoute: PedidosRoute,
   ReservasRoute: ReservasRoute,
 }
 export const routeTree = rootRouteImport
