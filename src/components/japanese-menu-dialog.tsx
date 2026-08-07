@@ -110,7 +110,13 @@ function ProductCard({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0 space-y-1">
               <h3 className="font-display text-lg leading-tight font-bold">{name}</h3>
-              {price && <p className="text-sm font-semibold text-coral">{price}</p>}
+              <p
+                className={
+                  price ? "text-sm font-semibold text-coral" : "text-sm text-muted-foreground"
+                }
+              >
+                {price || "Valor a definir"}
+              </p>
             </div>
             <ChevronDown
               className={`mt-1 size-5 shrink-0 text-muted-foreground transition-transform duration-300 ${
