@@ -2,14 +2,20 @@
  * Produtos da especialidade "Culinária japonesa" exibidos no pop-up da home.
  *
  * COMO EDITAR:
- * - `image`: caminho da foto (ex.: "/produtos/sushi-1.jpg" em `public/produtos/`)
- *   ou uma URL. Deixe "" para mostrar o espaço reservado da foto.
+ * - `image`: já preenchido com as fotos enviadas. Para trocar, use outra URL.
  * - `name`: nome do produto.
- * - `price`: valor já formatado (ex.: "R$ 89,90"). Deixe "" para ocultar.
+ * - `price`: valor já formatado (ex.: "R$ 89,90"). Enquanto vazio, aparece
+ *   "Valor a definir" no cartão.
  * - `description`: descrição curta do produto.
  *
  * Para adicionar ou remover produtos, basta acrescentar/apagar itens da lista.
  */
+import foto96 from "@/assets/produto_foto_96.jpg.asset.json";
+import foto103 from "@/assets/produto_foto_103.jpg.asset.json";
+import foto120 from "@/assets/produto_foto_120.jpg.asset.json";
+import foto133 from "@/assets/produto_foto_133.jpg.asset.json";
+import foto258 from "@/assets/produto_foto_258.jpg.asset.json";
+
 export type JapaneseProduct = {
   id: string;
   image: string;
@@ -19,8 +25,9 @@ export type JapaneseProduct = {
 };
 
 export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
-  { id: "produto-1", image: "", name: "", price: "", description: "" },
-  { id: "produto-2", image: "", name: "", price: "", description: "" },
-  { id: "produto-3", image: "", name: "", price: "", description: "" },
-  { id: "produto-4", image: "", name: "", price: "", description: "" },
+  { id: "produto-1", image: foto96.url, name: "", price: "", description: "" },
+  { id: "produto-2", image: foto103.url, name: "", price: "", description: "" },
+  { id: "produto-3", image: foto120.url, name: "", price: "", description: "" },
+  { id: "produto-4", image: foto133.url, name: "", price: "", description: "" },
+  { id: "produto-5", image: foto258.url, name: "", price: "", description: "" },
 ];
