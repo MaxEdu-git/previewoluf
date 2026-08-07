@@ -51,9 +51,13 @@ export const Route = createFileRoute("/")({
 const ICONS = { music: Music, baby: Baby, camera: Camera, users: Users, wine: Wine, tv: Tv };
 
 function Home() {
+  const [japaneseOpen, setJapaneseOpen] = useState(false);
+
   return (
     <>
+      <JapaneseMenuDialog open={japaneseOpen} onOpenChange={setJapaneseOpen} />
       <HeroCarousel />
+
 
       {/* Ações rápidas */}
       <section aria-label="Ações rápidas" className="border-b border-border bg-card">
