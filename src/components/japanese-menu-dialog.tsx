@@ -10,15 +10,19 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { JAPANESE_PRODUCTS, type JapaneseProduct } from "@/lib/japanese-menu";
+import { type SpecialtyProduct } from "@/lib/specialty-menus";
 import { WHATSAPP_MESSAGES, whatsappLink } from "@/lib/site-content";
 
-export function JapaneseMenuDialog({
+export function SpecialtyMenuDialog({
   open,
   onOpenChange,
+  title,
+  products,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  title: string;
+  products: SpecialtyProduct[];
 }) {
   const [expanded, setExpanded] = useState<string | null>(null);
 
@@ -32,14 +36,14 @@ export function JapaneseMenuDialog({
     >
       <DialogContent className="max-h-[88svh] gap-0 overflow-y-auto p-0 sm:max-w-2xl">
         <DialogHeader className="space-y-2 border-b border-border p-6 pb-5 text-left">
-          <DialogTitle className="font-display text-2xl font-bold">Culinária japonesa</DialogTitle>
+          <DialogTitle className="font-display text-2xl font-bold">{title}</DialogTitle>
           <DialogDescription>
             Toque em um produto para ver o valor e a descrição completa.
           </DialogDescription>
         </DialogHeader>
 
         <ul className="grid gap-4 p-6 sm:grid-cols-2">
-          {JAPANESE_PRODUCTS.map((product) => (
+          {products.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
@@ -48,6 +52,7 @@ export function JapaneseMenuDialog({
             />
           ))}
         </ul>
+
 
         <div className="border-t border-border p-6 pt-5">
           <Button asChild size="lg" className="min-h-12 w-full rounded-full">
@@ -66,7 +71,7 @@ function ProductCard({
   expanded,
   onToggle,
 }: {
-  product: JapaneseProduct;
+  product: SpecialtyProduct;
   expanded: boolean;
   onToggle: () => void;
 }) {

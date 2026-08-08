@@ -17,9 +17,10 @@ import { useState } from "react";
 
 import { ContactForm } from "@/components/contact-form";
 import { HeroCarousel } from "@/components/hero-carousel";
-import { JapaneseMenuDialog } from "@/components/japanese-menu-dialog";
+import { SpecialtyMenuDialog } from "@/components/japanese-menu-dialog";
 
 import { NavLink } from "@/components/nav-link";
+import { SPECIALTY_MENUS } from "@/lib/specialty-menus";
 import { Button } from "@/components/ui/button";
 import {
   ABOUT_PARAGRAPHS,
@@ -54,12 +55,23 @@ export const Route = createFileRoute("/")({
 const ICONS = { music: Music, baby: Baby, camera: Camera, users: Users, wine: Wine, tv: Tv };
 
 function Home() {
-  const [japaneseOpen, setJapaneseOpen] = useState(false);
+  const [openSpecialty, setOpenSpecialty] = useState<string | null>(null);
+  const activeMenu = openSpecialty ? SPECIALTY_MENUS[openSpecialty] : null;
 
   return (
     <>
-      <JapaneseMenuDialog open={japaneseOpen} onOpenChange={setJapaneseOpen} />
+      {activeMenu && (
+        <SpecialtyMenuDialog
+          open
+          onOpenChange={(next) => {
+            if (!next) setOpenSpecialty(null);
+          }}
+          title={activeMenu.title}
+          products={activeMenu.products}
+        />
+      )}
       <HeroCarousel />
+
 
 
       {/* Ações rápidas */}
@@ -121,20 +133,15 @@ function Home() {
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {SPECIALTIES.map((item) => (
               <li key={item.title} className="surface-card surface-card-hover p-6">
-                {item.title === "Culinária japonesa" ? (
-                  <button
-                    type="button"
-                    onClick={() => setJapaneseOpen(true)}
-                    aria-label="Ver produtos da culinária japonesa"
-                    className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground transition-transform duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                  >
-                    <UtensilsCrossed className="size-5" aria-hidden="true" />
-                  </button>
-                ) : (
-                  <span className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground">
-                    <UtensilsCrossed className="size-5" aria-hidden="true" />
-                  </span>
-                )}
+                <button
+                  type="button"
+                  onClick={() => setOpenSpecialty(item.title)}
+                  aria-label={`Ver produtos de ${item.title}`}
+                  className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground transition-transform duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                >
+                  <UtensilsCrossed className="size-5" aria-hidden="true" />
+                </button>
+
                 <h3 className="mt-4 font-display text-xl font-bold">{item.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
               </li>
