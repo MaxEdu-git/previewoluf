@@ -35,7 +35,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto96.url, 
     name: "Combinado Especial 14 Peças", 
     price: "R$ 79,90", 
-    description: "Composição do Prato\n\n• 2 Dyo de Salmão\n• 2 Make Fulô\n• 2 Make do Chef\n• 2 Ebitem Especial\n• 2 Hot Roll\n• 2 Hot Philadelphia\n• 2 Shake Couve" 
+    description: "**Composição do Prato:**\n\n• 2 Dyo de Salmão\n• 2 Make Fulô\n• 2 Make do Chef\n• 2 Ebitem Especial\n• 2 Hot Roll\n• 2 Hot Philadelphia\n• 2 Shake Couve" 
 
   },
   { 
@@ -43,7 +43,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto103.url, 
     name: "Dog Sushi", 
     price: "R$ 59,90", 
-    description: "Composição do Prato\n\n• Hot Roll de Salmão Grelhado\n• Camarão\n• Cream Cheese\n• Crispys de Batata-Doce\n• Cebolinha" 
+    description: "**Composição do Prato:**\n\n• Hot Roll de Salmão Grelhado\n• Camarão\n• Cream Cheese\n• Crispys de Batata-Doce\n• Cebolinha" 
   },
   { 
     id: "produto-3", 
@@ -57,48 +57,48 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto133.url, 
     name: "Combinado Hot", 
     price: "R$ 89,90", 
-    description: "Composição do Prato\n\n• 4 Hot Roll\n• 4 Hot Maracujá\n• 4 Hot Salmão com Geleia de Pimenta\n• 4 Hot Batata Crispy\n• 4 Shake Couve" 
+    description: "**Composição do Prato:**\n\n• 4 Hot Roll\n• 4 Hot Maracujá\n• 4 Hot Salmão com Geleia de Pimenta\n• 4 Hot Batata Crispy\n• 4 Shake Couve" 
   },
   { 
     id: "produto-5", 
     image: foto258.url, 
     name: "Combinado Individual 2", 
     price: "R$ 47,90", 
-    description: "Composição do Prato:\n\n• 1 Temaki Philadelphia\n• 4 Uramaki" 
+    description: "**Composição do Prato:**\n\n• 1 Temaki Philadelphia\n• 4 Uramaki" 
   },
   {
     id: "produto-6",
     image: foto123.url,
     name: "Temaki Hot Shake EBI",
     price: "R$ 44,90",
-    description: "Composição do Prato:\n\n• Salmão Grelhado\n• Cream Cheese\n• Cebolinha\n• Massa Harumaki",
+    description: "**Composição do Prato:**\n\n• Salmão Grelhado\n• Cream Cheese\n• Cebolinha\n• Massa Harumaki",
   },
   {
     id: "produto-7",
     image: foto108.url,
     name: "Dyo de Salmão",
     price: "R$ 27,90",
-    description: "Composição do Prato:\n\n• Arroz envolto com Tartar de Salmão\n• Cebolinha\n• Pimenta\n• Gergelim Torrado",
+    description: "**Composição do Prato:**\n\n• Arroz envolto com Tartar de Salmão\n• Cebolinha\n• Pimenta\n• Gergelim Torrado",
   },
   {
     id: "produto-8",
     image: foto115.url,
     name: "Make Fulô",
     price: "R$ 44,90",
-    description: "Composição do Prato\n\n• Arroz envolto com Salmão\n• Cream Cheese\n• Camarão\n• Maçaricado\n• Geleia de Frutas Vermelhas\n• Molho Teriyaki",
+    description: "**Composição do Prato:**\n\n• Arroz envolto com Salmão\n• Cream Cheese\n• Camarão\n• Maçaricado\n• Geleia de Frutas Vermelhas\n• Molho Teriyaki",
   },
   {
     id: "produto-9",
     image: foto257.url,
     name: "Combinado Individual 1",
     price: "R$ 54,90",
-    description: "Composição do Prato\n\n• 1 Hot Temaki de Salmão Grelhado\n• 5 Hot Roll",
+    description: "**Composição do Prato:**\n\n• 1 Hot Temaki de Salmão Grelhado\n• 5 Hot Roll",
   },
   {
     id: "produto-10",
     image: foto102.url,
     name: "Sugestão Hot",
     price: "R$ 89,90",
-    description: "Composição do Prato:\n\n• 2 Mini Temakis de Salmão com Cream Cheese\n• 4 Uramaki Hot\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia",
+    description: "**Composição do Prato:**\n\n• 2 Mini Temakis de Salmão com Cream Cheese\n• 4 Uramaki Hot\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia",
   },
 ];
