@@ -17,7 +17,7 @@ import { useState } from "react";
 
 import { ContactForm } from "@/components/contact-form";
 import { HeroCarousel } from "@/components/hero-carousel";
-import { JapaneseMenuDialog } from "@/components/japanese-menu-dialog";
+import { SpecialtyMenuDialog } from "@/components/japanese-menu-dialog";
 
 import { NavLink } from "@/components/nav-link";
 import { Button } from "@/components/ui/button";
