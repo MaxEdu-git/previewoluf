@@ -85,7 +85,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto115.url,
     name: "Make Fulô",
     price: "R$ 44,90",
-    description: "",
+    description: "Composição do Prato\n\n• Arroz envolto com Salmão\n• Cream Cheese\n• Camarão\n• Maçaricado\n• Geleia de Frutas Vermelhas\n• Molho Teriyaki",
   },
   {
     id: "produto-9",
