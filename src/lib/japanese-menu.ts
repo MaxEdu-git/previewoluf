@@ -59,6 +59,6 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto258.url, 
     name: "Combinado individual 2", 
     price: "R$ 47,90", 
-    description: "Combinado perfeito para uma refeição individual." 
+    description: "Composição do Prato:\n\n• 1 Temaki Philadelphia\n• 4 Uramaki" 
   },
 ];
