@@ -38,7 +38,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto103.url, 
     name: "Dog Sushi", 
     price: "R$ 59,90", 
-    description: "Saboroso hot dog oriental com recheio premium." 
+    description: "Composição do Prato\n\n• Hot Roll de Salmão Grelhado\n• Camarão\n• Cream Cheese\n• Crispys de Batata-Doce\n• Cebolinha" 
   },
   { 
     id: "produto-3", 
