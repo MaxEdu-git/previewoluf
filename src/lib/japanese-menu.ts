@@ -92,7 +92,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto257.url,
     name: "Combinado Individual 1",
     price: "R$ 54,90",
-    description: "",
+    description: "Composição do Prato\n\n• 1 Hot Temaki de Salmão Grelhado\n• 5 Hot Roll",
   },
   {
     id: "produto-10",
