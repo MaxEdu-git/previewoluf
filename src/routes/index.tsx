@@ -132,19 +132,22 @@ function Home() {
 
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {SPECIALTIES.map((item) => (
-              <li key={item.title} className="surface-card surface-card-hover p-6">
+              <li key={item.title}>
                 <button
                   type="button"
                   onClick={() => setOpenSpecialty(item.title)}
                   aria-label={`Ver produtos de ${item.title}`}
-                  className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground transition-transform duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                  className="surface-card surface-card-hover group flex size-full flex-col p-6 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
-                  <UtensilsCrossed className="size-5" aria-hidden="true" />
-                </button>
+                  <span className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground transition-transform duration-300 group-hover:scale-105">
+                    <UtensilsCrossed className="size-5" aria-hidden="true" />
+                  </span>
 
-                <h3 className="mt-4 font-display text-xl font-bold">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="mt-4 font-display text-xl font-bold">{item.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                </button>
               </li>
+
             ))}
           </ul>
 
