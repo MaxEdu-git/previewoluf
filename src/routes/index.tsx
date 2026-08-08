@@ -54,12 +54,23 @@ export const Route = createFileRoute("/")({
 const ICONS = { music: Music, baby: Baby, camera: Camera, users: Users, wine: Wine, tv: Tv };
 
 function Home() {
-  const [japaneseOpen, setJapaneseOpen] = useState(false);
+  const [openSpecialty, setOpenSpecialty] = useState<string | null>(null);
+  const activeMenu = openSpecialty ? SPECIALTY_MENUS[openSpecialty] : null;
 
   return (
     <>
-      <JapaneseMenuDialog open={japaneseOpen} onOpenChange={setJapaneseOpen} />
+      {activeMenu && (
+        <SpecialtyMenuDialog
+          open
+          onOpenChange={(next) => {
+            if (!next) setOpenSpecialty(null);
+          }}
+          title={activeMenu.title}
+          products={activeMenu.products}
+        />
+      )}
       <HeroCarousel />
+
 
 
       {/* Ações rápidas */}
