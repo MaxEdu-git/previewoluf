@@ -128,7 +128,7 @@ function ProductCard({
 
           <AnimatePresence initial={false}>
             {expanded && (
-              <motion.p
+              <motion.div
                 key="description"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
@@ -136,8 +136,22 @@ function ProductCard({
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="overflow-hidden text-sm leading-relaxed text-muted-foreground"
               >
-                {description}
-              </motion.p>
+                {description.split("\n").map((line, i) => {
+                  if (i === 0 && line === "Composição do Prato") {
+                    return (
+                      <p key={i} className="mb-2 block font-bold text-foreground">
+                        {line}:
+                      </p>
+                    );
+                  }
+                  return (
+                    <p key={i} className={line.trim() ? "block" : "h-2"}>
+                      {line}
+                    </p>
+                  );
+                })}
+              </motion.div>
+
             )}
           </AnimatePresence>
         </button>
