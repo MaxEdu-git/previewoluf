@@ -71,7 +71,7 @@ function ProductCard({
   expanded,
   onToggle,
 }: {
-  product: JapaneseProduct;
+  product: SpecialtyProduct;
   expanded: boolean;
   onToggle: () => void;
 }) {
