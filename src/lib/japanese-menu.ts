@@ -52,7 +52,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto133.url, 
     name: "Combinado Hot", 
     price: "R$ 89,90", 
-    description: "Mix variado de sushis quentes e crocantes." 
+    description: "Composição do Prato\n\n• 4 Hot Roll\n• 4 Hot Maracujá\n• 4 Hot Salmão com Geleia de Pimenta\n• 4 Hot Batata Crispy\n• 4 Shake Couve" 
   },
   { 
     id: "produto-5", 
