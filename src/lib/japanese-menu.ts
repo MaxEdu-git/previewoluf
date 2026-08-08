@@ -25,9 +25,39 @@ export type JapaneseProduct = {
 };
 
 export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
-  { id: "produto-1", image: foto96.url, name: "", price: "", description: "" },
-  { id: "produto-2", image: foto103.url, name: "", price: "", description: "" },
-  { id: "produto-3", image: foto120.url, name: "", price: "", description: "" },
-  { id: "produto-4", image: foto133.url, name: "", price: "", description: "" },
-  { id: "produto-5", image: foto258.url, name: "", price: "", description: "" },
+  { 
+    id: "produto-1", 
+    image: foto96.url, 
+    name: "Combinado Especial 14 Peças", 
+    price: "R$ 79,90", 
+    description: "Uma seleção especial de sushis e sashimis frescos." 
+  },
+  { 
+    id: "produto-2", 
+    image: foto103.url, 
+    name: "Dog Sushi", 
+    price: "R$ 59,90", 
+    description: "Saboroso hot dog oriental com recheio premium." 
+  },
+  { 
+    id: "produto-3", 
+    image: foto120.url, 
+    name: "Sashimi 5 Peças de Salmao", 
+    price: "R$ 39,90", 
+    description: "Fatias finas e frescas de salmão de alta qualidade." 
+  },
+  { 
+    id: "produto-4", 
+    image: foto133.url, 
+    name: "Combinado Hot", 
+    price: "R$ 89,90", 
+    description: "Mix variado de sushis quentes e crocantes." 
+  },
+  { 
+    id: "produto-5", 
+    image: foto258.url, 
+    name: "Combinado individual 2", 
+    price: "R$ 47,90", 
+    description: "Combinado perfeito para uma refeição individual." 
+  },
 ];
