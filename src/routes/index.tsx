@@ -20,6 +20,7 @@ import { HeroCarousel } from "@/components/hero-carousel";
 import { SpecialtyMenuDialog } from "@/components/japanese-menu-dialog";
 
 import { NavLink } from "@/components/nav-link";
+import { SPECIALTY_MENUS } from "@/lib/specialty-menus";
 import { Button } from "@/components/ui/button";
 import {
   ABOUT_PARAGRAPHS,
