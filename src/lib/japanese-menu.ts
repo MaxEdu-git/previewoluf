@@ -124,7 +124,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto99.url,
     name: "Combinado Hot Especial ",
     price: "R$ 99,90",
-    description: "Composição do Prato:\n\n• 5 Hot Roll\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia\n• 4 Niguiri de Salmão Maçaricado\n• 4 Uramaki Ebitem Maçaricado",
+    description: "Composição do Prato\n\n• 5 Hot Roll\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia\n• 4 Niguiri de Salmão Maçaricado\n• 4 Uramaki Ebitem Maçaricado",
   },
   {
     id: "produto-14",
@@ -136,8 +136,8 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   {
     id: "produto-15",
     image: foto260.url,
-    name: "",
-    price: "",
-    description: "",
+    name: "Combinado Individual 4",
+    price: "R$ 49,90",
+    description: "Composição do Prato\n\n• 1 Temaki Philadelphia\n• 4 Uramaki",
   },
 ];
