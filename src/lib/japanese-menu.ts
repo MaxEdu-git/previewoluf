@@ -171,7 +171,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto110.url,
     name: "Hassomaki",
     price: "R$ 24,90",
-    description: "Composição do Prato",
+    description: "Composição do Prato\n\n• Nori\n• Shari\n• Arroz\n• Salmão\n• Cream Cheese",
   },
   {
     id: "produto-20",
