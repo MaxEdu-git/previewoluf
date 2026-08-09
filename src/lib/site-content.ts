@@ -80,15 +80,15 @@ export const SPECIALTIES = [
     description: "Sushis, temakis e combinações preparadas com cuidado.",
   },
   {
-    title: "Moquecas",
+    title: "Moquecas e ensopados",
     description: "O sabor da Bahia em receitas marcantes e acolhedoras.",
   },
   {
-    title: "Massas",
+    title: "Pratos individuais",
     description: "Pratos inspirados na culinária italiana com combinações especiais.",
   },
   {
-    title: "Frutos do mar",
+    title: "Pratos para 2",
     description: "Sabores do mar presentes em diferentes preparações da casa.",
   },
 ] as const;
