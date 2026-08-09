@@ -71,7 +71,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto123.url,
     name: "Temaki Hot Shake EBI",
     price: "R$ 44,90",
-    description: "Composição do Prato:\n\n• Salmão Grelhado\n• Cream Cheese\n• Cebolinha\n• Massa Harumaki",
+    description: "Composição do Prato\n\n• Salmão Grelhado\n• Cream Cheese\n• Cebolinha\n• Massa Harumaki",
   },
   {
     id: "produto-7",
