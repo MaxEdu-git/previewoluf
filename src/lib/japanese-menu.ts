@@ -20,6 +20,11 @@ import foto108 from "@/assets/produto_foto_108.jpg.asset.json";
 import foto115 from "@/assets/produto_foto_115.jpg.asset.json";
 import foto257 from "@/assets/produto_foto_257.jpg.asset.json";
 import foto102 from "@/assets/produto_foto_102.jpg.asset.json";
+import foto117 from "@/assets/produto_foto_117.jpg.asset.json";
+import foto114 from "@/assets/produto_foto_114.jpg.asset.json";
+import foto99 from "@/assets/produto_foto_99.jpg.asset.json";
+import foto100 from "@/assets/produto_foto_100.jpg.asset.json";
+import foto260 from "@/assets/produto_foto_260.jpg.asset.json";
 
 export type JapaneseProduct = {
   id: string;
@@ -100,5 +105,40 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     name: "Sugestão Hot",
     price: "R$ 89,90",
     description: "Composição do Prato\n\n• 2 Mini Temakis de Salmão com Cream Cheese\n• 4 Uramaki Hot\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia",
+  },
+  {
+    id: "produto-11",
+    image: foto117.url,
+    name: "",
+    price: "",
+    description: "",
+  },
+  {
+    id: "produto-12",
+    image: foto114.url,
+    name: "",
+    price: "",
+    description: "",
+  },
+  {
+    id: "produto-13",
+    image: foto99.url,
+    name: "",
+    price: "",
+    description: "",
+  },
+  {
+    id: "produto-14",
+    image: foto100.url,
+    name: "",
+    price: "",
+    description: "",
+  },
+  {
+    id: "produto-15",
+    image: foto260.url,
+    name: "",
+    price: "",
+    description: "",
   },
 ];
