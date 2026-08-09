@@ -38,10 +38,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   { 
     id: "produto-1", 
     image: foto96.url, 
-    name: "Combinado Especial 14 Peças", 
+    name: "Combinado Especial ", 
     price: "R$ 79,90", 
     description: "Composição do Prato\n\n• 2 Dyo de Salmão\n• 2 Make Fulô\n• 2 Make do Chef\n• 2 Ebitem Especial\n• 2 Hot Roll\n• 2 Hot Philadelphia\n• 2 Shake Couve" 
-
   },
   { 
     id: "produto-2", 
