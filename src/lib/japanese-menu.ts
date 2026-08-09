@@ -148,9 +148,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   {
     id: "produto-16",
     image: foto129.url,
-    name: "",
-    price: "",
-    description: "",
+    name: "Combinado Especial 30 P.",
+    price: "R$ 139,90",
+    description: "Composição do Prato\n\n• 10 Hot Roll\n• 4 Hot Philadelphia\n• 4 Niguiri Torô Trufado\n• 2 Niguiri de Salmão Trufado\n• 2 Niguiri de Salmão Maçaricado\n• 4 Joy de Atum\n• 4 Joy de Salmão",
   },
   {
     id: "produto-17",
