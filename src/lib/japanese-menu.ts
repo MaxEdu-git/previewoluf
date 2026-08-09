@@ -178,6 +178,6 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto119.url,
     name: "Niguiri de Salmão Torô Trufado",
     price: "R$ 19,90",
-    description: "Composição do Prato",
+    description: "Composição do Prato\n\n• 2 unidades de Barriga de Salmão\n• Arroz\n• Azeite Trufado\n• Limão-Siciliano\n• Flor de Sal",
   },
 ];
