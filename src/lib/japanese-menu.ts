@@ -187,7 +187,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   },
   { id: "produto-21", image: foto113.url, name: "Hot Roll", price: "R$ 49,90", description: "Composição do Prato:\n\n• 10 unidades\n• Enrolado de Massa Harumaki\n• Salmão\n• Kani\n• Cream Cheese\n• Frito" },
   { id: "produto-22", image: foto112.url, name: "Hot Philadelphia", price: "R$ 49,90", description: "Composição do Prato:\n\n• 8 unidades\n• Enrolado de Nori\n• Arroz\n• Cream Cheese\n• Salmão\n• Cebolinha\n• Empanado e Frito" },
-  { id: "produto-23", image: foto259.url, name: "Combinado Individual 3", price: "R$ 39,90", description: "" },
+  { id: "produto-23", image: foto259.url, name: "Combinado Individual 3", price: "R$ 39,90", description: "Composição do Prato:\n\n• 4 Uramaki\n• 4 Hossomaki" },
   { id: "produto-24", image: foto93.url, name: "Carpacio de Salmão", price: "R$ 69,90", description: "" },
   { id: "produto-25", image: foto124.url, name: "Temaki Philadelphia", price: "R$ 37,90", description: "" },
 ];
