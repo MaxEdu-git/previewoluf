@@ -115,9 +115,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   {
     id: "produto-12",
     image: foto114.url,
-    name: "",
-    price: "",
-    description: "",
+    name: "Make da Chefe",
+    price: "R$ 49,90",
+    description: "Composição do Prato\n\n• 6 unidades\n• Enrolado de Salmão\n• Cream Cheese\n• Camarão Empanado\n• Maçaricado com Geleia de Frutas Vermelhas\n• Teriyaki",
   },
   {
     id: "produto-13",
