@@ -164,7 +164,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto131.url,
     name: "Temaki Empanado",
     price: "R$ 42,90",
-    description: "Composição do Prato",
+    description: "Composição do Prato\n\n• Salmão Grelhado\n• Cream Cheese",
   },
   {
     id: "produto-19",
