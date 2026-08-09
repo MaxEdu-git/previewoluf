@@ -148,7 +148,9 @@ function RootComponent() {
       <SiteFooter />
       <FloatingActions />
       <MobileBottomNav />
+      <ExternalLinkGuard />
       <Toaster position="top-center" />
+
     </QueryClientProvider>
   );
 }
