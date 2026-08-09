@@ -25,6 +25,11 @@ import foto114 from "@/assets/produto_foto_114.jpg.asset.json";
 import foto99 from "@/assets/produto_foto_99.jpg.asset.json";
 import foto100 from "@/assets/produto_foto_100.jpg.asset.json";
 import foto260 from "@/assets/produto_foto_260.jpg.asset.json";
+import foto129 from "@/assets/produto_foto_129.jpg.asset.json";
+import foto98 from "@/assets/produto_foto_98.jpg.asset.json";
+import foto131 from "@/assets/produto_foto_131.jpg.asset.json";
+import foto110 from "@/assets/produto_foto_110.jpg.asset.json";
+import foto119 from "@/assets/produto_foto_119.jpg.asset.json";
 
 export type JapaneseProduct = {
   id: string;
