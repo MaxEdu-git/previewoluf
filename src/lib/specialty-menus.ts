@@ -34,16 +34,16 @@ export const SPECIALTY_MENUS: Record<string, SpecialtyMenu> = {
     title: "Culinária japonesa",
     products: JAPANESE_PRODUCTS,
   },
-  Moquecas: {
-    title: "Moquecas",
+  "Moquecas e ensopados": {
+    title: "Moquecas e ensopados",
     products: emptySlots("moqueca"),
   },
-  Massas: {
-    title: "Massas",
+  "Pratos individuais": {
+    title: "Pratos individuais",
     products: emptySlots("massa"),
   },
-  "Frutos do mar": {
-    title: "Frutos do mar",
+  "Pratos para 2": {
+    title: "Pratos para 2",
     products: emptySlots("frutos-do-mar"),
   },
 };
