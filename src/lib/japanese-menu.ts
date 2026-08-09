@@ -108,9 +108,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   {
     id: "produto-11",
     image: foto117.url,
-    name: "",
-    price: "",
-    description: "",
+    name: "Niguiri de Salmão Trufado",
+    price: "R$ 21,90",
+    description: "Composição do Prato\n\n• 2 unidades de Salmão\n• Arroz\n• Salsa de Trufa\n• Ova de Massago\n• Cebolinha",
   },
   {
     id: "produto-12",
