@@ -54,7 +54,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto120.url, 
     name: "Sashimi de Salmão", 
     price: "R$ 39,90", 
-    description: "Fatias finas e frescas de salmão de alta qualidade." 
+    description: "Composição do Prato\n\n• 5 Sashimi de Salmão" 
   },
   { 
     id: "produto-4", 
