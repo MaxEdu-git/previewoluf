@@ -30,6 +30,11 @@ import foto98 from "@/assets/produto_foto_98.jpg.asset.json";
 import foto131 from "@/assets/produto_foto_131.jpg.asset.json";
 import foto110 from "@/assets/produto_foto_110.jpg.asset.json";
 import foto119 from "@/assets/produto_foto_119.jpg.asset.json";
+import foto113 from "@/assets/produto_foto_113.jpg.asset.json";
+import foto112 from "@/assets/produto_foto_112.jpg.asset.json";
+import foto259 from "@/assets/produto_foto_259.jpg.asset.json";
+import foto93 from "@/assets/produto_foto_93.jpg.asset.json";
+import foto124 from "@/assets/produto_foto_124.jpg.asset.json";
 
 export type JapaneseProduct = {
   id: string;
@@ -180,4 +185,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     price: "R$ 19,90",
     description: "Composição do Prato\n\n• 2 unidades de Barriga de Salmão\n• Arroz\n• Azeite Trufado\n• Limão-Siciliano\n• Flor de Sal",
   },
+  { id: "produto-21", image: foto113.url, name: "", price: "", description: "" },
+  { id: "produto-22", image: foto112.url, name: "", price: "", description: "" },
+  { id: "produto-23", image: foto259.url, name: "", price: "", description: "" },
+  { id: "produto-24", image: foto93.url, name: "", price: "", description: "" },
+  { id: "produto-25", image: foto124.url, name: "", price: "", description: "" },
 ];
