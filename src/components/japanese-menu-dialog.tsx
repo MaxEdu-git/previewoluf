@@ -142,10 +142,10 @@ function ProductCard({
                 className="overflow-hidden text-sm leading-relaxed text-muted-foreground"
               >
                 {description.split("\n").map((line, i) => {
-                  if (i === 0 && line === "Composição do Prato") {
+                  if (i === 0 && line.startsWith("Composição do Prato")) {
                     return (
                       <p key={i} className="mb-2 block font-bold text-foreground">
-                        {line}:
+                        {line.endsWith(":") ? line : `${line}:`}
                       </p>
                     );
                   }
