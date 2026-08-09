@@ -78,7 +78,7 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto108.url,
     name: "Dyo de Salmão",
     price: "R$ 27,90",
-    description: "Composição do Prato:\n\n• Arroz envolto com Tartar de Salmão\n• Cebolinha\n• Pimenta\n• Gergelim Torrado",
+    description: "Composição do Prato\n\n• Arroz envolto com Tartar de Salmão\n• Cebolinha\n• Pimenta\n• Gergelim Torrado",
   },
   {
     id: "produto-8",
