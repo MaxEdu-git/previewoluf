@@ -180,5 +180,4 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     price: "",
     description: "",
   },
-  },
 ];
