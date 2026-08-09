@@ -99,6 +99,6 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     image: foto102.url,
     name: "Sugestão Hot",
     price: "R$ 89,90",
-    description: "Composição do Prato:\n\n• 2 Mini Temakis de Salmão com Cream Cheese\n• 4 Uramaki Hot\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia",
+    description: "Composição do Prato\n\n• 2 Mini Temakis de Salmão com Cream Cheese\n• 4 Uramaki Hot\n• 4 Hot Shake Couve\n• 4 Hot Philadelphia",
   },
 ];
