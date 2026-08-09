@@ -185,4 +185,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
     price: "R$ 19,90",
     description: "Composição do Prato\n\n• 2 unidades de Barriga de Salmão\n• Arroz\n• Azeite Trufado\n• Limão-Siciliano\n• Flor de Sal",
   },
+  { id: "produto-21", image: foto113.url, name: "", price: "", description: "" },
+  { id: "produto-22", image: foto112.url, name: "", price: "", description: "" },
+  { id: "produto-23", image: foto259.url, name: "", price: "", description: "" },
+  { id: "produto-24", image: foto93.url, name: "", price: "", description: "" },
+  { id: "produto-25", image: foto124.url, name: "", price: "", description: "" },
 ];
