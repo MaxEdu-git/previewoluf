@@ -129,9 +129,9 @@ export const JAPANESE_PRODUCTS: JapaneseProduct[] = [
   {
     id: "produto-14",
     image: foto100.url,
-    name: "",
-    price: "",
-    description: "",
+    name: "Sugestão Trio Maky Roll",
+    price: "R$ 89,90",
+    description: "Composição do Prato\n\n• 10 Hot Roll\n• 2 Hot Temaki Shake Ebi",
   },
   {
     id: "produto-15",
