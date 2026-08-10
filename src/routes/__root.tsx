@@ -148,7 +148,6 @@ function RootComponent() {
       <FloatingActions />
       <MobileBottomNav />
       <Toaster position="top-center" />
-      <Toaster position="top-center" />
 
     </QueryClientProvider>
   );
