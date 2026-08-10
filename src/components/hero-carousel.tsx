@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/nav-link";
-import { HERO_SLIDES, SITE, WHATSAPP_MESSAGES, whatsappLink } from "@/lib/site-content";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { HERO_SLIDES, SITE, WHATSAPP_MESSAGES } from "@/lib/site-content";
 import { cn } from "@/lib/utils";
 
 const INTERVAL = 6500;
@@ -84,14 +85,12 @@ export function HeroCarousel() {
               variant="outline"
               className="min-h-12 rounded-full border-overlay-foreground/50 bg-transparent px-7 text-overlay-foreground hover:bg-overlay-foreground/15 hover:text-overlay-foreground"
             >
-              <a
-                href={whatsappLink(WHATSAPP_MESSAGES.order)}
-                target="_blank"
-                rel="noreferrer"
+              <WhatsAppLink
+                message={WHATSAPP_MESSAGES.order}
                 aria-label={`Pedir pelo WhatsApp do ${SITE.name}`}
               >
                 Pedir agora
-              </a>
+              </WhatsAppLink>
             </Button>
           </div>
         </div>

@@ -1,7 +1,8 @@
 import { ArrowUp, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { SITE, WHATSAPP_MESSAGES, whatsappLink } from "@/lib/site-content";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { SITE, WHATSAPP_MESSAGES } from "@/lib/site-content";
 
 export function FloatingActions() {
   const [showWhatsapp, setShowWhatsapp] = useState(false);
@@ -31,15 +32,13 @@ export function FloatingActions() {
         </button>
       )}
       {showWhatsapp && (
-        <a
-          href={whatsappLink(WHATSAPP_MESSAGES.general)}
-          target="_blank"
-          rel="noreferrer"
+        <WhatsAppLink
+          message={WHATSAPP_MESSAGES.general}
           aria-label={`Falar com o ${SITE.name} pelo WhatsApp`}
           className="fade-rise pointer-events-auto grid size-14 place-items-center rounded-full bg-success text-primary-foreground shadow-[var(--shadow-lift)] transition-transform hover:-translate-y-0.5"
         >
           <MessageCircle className="size-7" aria-hidden="true" />
-        </a>
+        </WhatsAppLink>
       )}
     </div>
   );

@@ -11,7 +11,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { type SpecialtyProduct } from "@/lib/specialty-menus";
-import { WHATSAPP_MESSAGES, whatsappLink } from "@/lib/site-content";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { WHATSAPP_MESSAGES } from "@/lib/site-content";
 
 export function SpecialtyMenuDialog({
   open,
