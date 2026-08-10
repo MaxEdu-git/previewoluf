@@ -1,7 +1,7 @@
 # Ajustar abertura do WhatsApp sem bloqueio no preview
 
 ## Objetivo
-Fazer todos os botões do WhatsApp abrirem corretamente com o número **(71) 99340-3335**, tanto no site publicado quanto na pré-visualização incorporada.
+Fazer todos os botões do WhatsApp abrirem corretamente com o número **(71) 99694-9900**, tanto no site publicado quanto na pré-visualização incorporada.
 
 ## Diagnóstico confirmado
 - Todos os botões usam o link oficial `wa.me` com o número internacional `5571993403335`.
