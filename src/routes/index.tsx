@@ -20,6 +20,7 @@ import { HeroCarousel } from "@/components/hero-carousel";
 import { SpecialtyMenuDialog } from "@/components/japanese-menu-dialog";
 
 import { NavLink } from "@/components/nav-link";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { SPECIALTY_MENUS } from "@/lib/specialty-menus";
 import { Button } from "@/components/ui/button";
 import {
@@ -30,7 +31,6 @@ import {
   SITE,
   SPECIALTIES,
   WHATSAPP_MESSAGES,
-  whatsappLink,
 } from "@/lib/site-content";
 
 const TITLE = "Restaurante Fulô em Camaçari | Moquecas, Sushi, Massas e Frutos do Mar";
@@ -79,8 +79,7 @@ function Home() {
         <div className="section-shell grid grid-cols-2 gap-3 py-6 sm:grid-cols-4">
           <QuickAction href="/reservas" icon={<CalendarDays className="size-5" />} label="Reservar" />
           <QuickAction
-            href={whatsappLink(WHATSAPP_MESSAGES.general)}
-            external
+            whatsappMessage={WHATSAPP_MESSAGES.general}
             icon={<MessageCircle className="size-5" />}
             label="WhatsApp"
           />
