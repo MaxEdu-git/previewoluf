@@ -188,9 +188,7 @@ function Home() {
             Enquanto isso, fale com a equipe para consultar as opções disponíveis hoje.
           </p>
           <Button asChild size="lg" className="mt-8 min-h-12 rounded-full px-7">
-            <a href={whatsappLink(WHATSAPP_MESSAGES.menu)} target="_blank" rel="noreferrer">
-              Consultar pelo WhatsApp
-            </a>
+            <WhatsAppLink message={WHATSAPP_MESSAGES.menu}>Consultar pelo WhatsApp</WhatsAppLink>
           </Button>
         </div>
       </section>
@@ -224,9 +222,7 @@ function Home() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg" className="min-h-12 rounded-full px-7">
-              <a href={whatsappLink(WHATSAPP_MESSAGES.order)} target="_blank" rel="noreferrer">
-                Pedir pelo WhatsApp
-              </a>
+              <WhatsAppLink message={WHATSAPP_MESSAGES.order}>Pedir pelo WhatsApp</WhatsAppLink>
             </Button>
             <Button asChild size="lg" variant="outline" className="min-h-12 rounded-full px-7">
               <NavLink href="/pedidos">Ver detalhes</NavLink>
@@ -293,14 +289,12 @@ function Home() {
             <ul className="mt-6 space-y-3 text-sm">
               <li>
                 <span className="font-medium">WhatsApp: </span>
-                <a
-                  href={whatsappLink(WHATSAPP_MESSAGES.general)}
-                  target="_blank"
-                  rel="noreferrer"
+                <WhatsAppLink
+                  message={WHATSAPP_MESSAGES.general}
                   className="underline underline-offset-4"
                 >
                   {SITE.phoneDisplay}
-                </a>
+                </WhatsAppLink>
               </li>
               <li>
                 <span className="font-medium">E-mail: </span>
@@ -343,14 +337,24 @@ function QuickAction({
   label,
   icon,
   external,
+  whatsappMessage,
 }: {
-  href: string;
+  href?: string;
   label: string;
   icon: React.ReactNode;
   external?: boolean;
+  whatsappMessage?: string;
 }) {
   const className =
     "surface-card surface-card-hover flex min-h-14 items-center justify-center gap-2 px-3 py-3 text-sm font-semibold";
+  if (whatsappMessage) {
+    return (
+      <WhatsAppLink message={whatsappMessage} className={className}>
+        <span className="text-coral">{icon}</span>
+        {label}
+      </WhatsAppLink>
+    );
+  }
   if (external) {
     return (
       <a href={href} target="_blank" rel="noreferrer" className={className}>
@@ -360,7 +364,7 @@ function QuickAction({
     );
   }
   return (
-    <NavLink href={href} className={className}>
+    <NavLink href={href!} className={className}>
       <span className="text-coral">{icon}</span>
       {label}
     </NavLink>
