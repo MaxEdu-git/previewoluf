@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
-import { SITE, WHATSAPP_MESSAGES, whatsappLink } from "@/lib/site-content";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { SITE, WHATSAPP_MESSAGES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/pedidos")({
   head: () => ({
@@ -34,9 +35,7 @@ function PedidosPage() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button asChild size="lg" className="min-h-12 rounded-full px-7">
-            <a href={whatsappLink(WHATSAPP_MESSAGES.order)} target="_blank" rel="noreferrer">
-              Pedir pelo WhatsApp
-            </a>
+            <WhatsAppLink message={WHATSAPP_MESSAGES.order}>Pedir pelo WhatsApp</WhatsAppLink>
           </Button>
         </div>
         <p className="mt-8 text-sm text-muted-foreground">

@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { ExternalLinkGuard } from "@/components/external-link-guard";
 import { FloatingActions } from "@/components/floating-actions";
 import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -148,7 +147,6 @@ function RootComponent() {
       <SiteFooter />
       <FloatingActions />
       <MobileBottomNav />
-      <ExternalLinkGuard />
       <Toaster position="top-center" />
 
     </QueryClientProvider>
