@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
-import { SITE, WHATSAPP_MESSAGES, whatsappLink } from "@/lib/site-content";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { SITE, WHATSAPP_MESSAGES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/pedidos")({
   head: () => ({

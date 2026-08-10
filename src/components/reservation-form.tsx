@@ -10,7 +10,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { buildSlots, reservationSchema, RESERVATION_RULES } from "@/lib/forms-shared";
 import { createReservation } from "@/lib/reservations.functions";
-import { OCCASIONS, SITE, whatsappLink } from "@/lib/site-content";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { OCCASIONS, SITE } from "@/lib/site-content";
 
 function toIsoDate(date: Date) {
   return date.toISOString().slice(0, 10);
@@ -90,15 +91,11 @@ export function ReservationForm() {
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Button asChild className="min-h-11 rounded-full">
-            <a
-              href={whatsappLink(
-                `Olá! Fiz uma solicitação de reserva no site (protocolo ${success.protocol}) e gostaria de confirmar.`,
-              )}
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              message={`Olá! Fiz uma solicitação de reserva no site (protocolo ${success.protocol}) e gostaria de confirmar.`}
             >
               Confirmar pelo WhatsApp
-            </a>
+            </WhatsAppLink>
           </Button>
           <Button
             variant="outline"

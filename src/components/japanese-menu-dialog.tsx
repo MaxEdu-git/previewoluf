@@ -57,9 +57,7 @@ export function SpecialtyMenuDialog({
 
         <div className="border-t border-border p-6 pt-5">
           <Button asChild size="lg" className="min-h-12 w-full rounded-full">
-            <a href={whatsappLink(WHATSAPP_MESSAGES.menu)} target="_blank" rel="noreferrer">
-              Consultar pelo WhatsApp
-            </a>
+            <WhatsAppLink message={WHATSAPP_MESSAGES.menu}>Consultar pelo WhatsApp</WhatsAppLink>
           </Button>
         </div>
       </DialogContent>
