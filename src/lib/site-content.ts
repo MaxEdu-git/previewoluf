@@ -7,8 +7,8 @@ export const SITE = {
   description:
     "Restaurante acolhedor em Camaçari que reúne culinária baiana, japonesa, massas, frutos do mar e opções para compartilhar em família ou com amigos.",
   email: "contatofulorestaurante@gmail.com",
-  whatsapp: "5571993403335",
-  phoneDisplay: "(71) 99340-3335",
+  whatsapp: "5571996949900",
+  phoneDisplay: "(71) 99694-9900",
   instagram: {
     handle: "@fulorestaurante",
     url: "https://www.instagram.com/fulorestaurante/",
