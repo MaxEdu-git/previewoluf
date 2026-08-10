@@ -35,9 +35,7 @@ function PedidosPage() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button asChild size="lg" className="min-h-12 rounded-full px-7">
-            <a href={whatsappLink(WHATSAPP_MESSAGES.order)} target="_blank" rel="noreferrer">
-              Pedir pelo WhatsApp
-            </a>
+            <WhatsAppLink message={WHATSAPP_MESSAGES.order}>Pedir pelo WhatsApp</WhatsAppLink>
           </Button>
         </div>
         <p className="mt-8 text-sm text-muted-foreground">
