@@ -15,14 +15,22 @@ type WhatsAppLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
 };
 
 export function openWhatsApp(href: string) {
-  const opened = window.open(href, "_blank", "noopener,noreferrer");
-  if (!opened) {
-    // Sem permissão para nova aba: navega a janela de nível mais alto possível.
+  // Sem "noopener" na lista de features: com ela o navegador devolve null e não
+  // é possível saber se a aba abriu. A referência é limpa em seguida.
+  const opened = window.open(href, "_blank");
+  if (opened) {
     try {
-      (window.top ?? window).location.href = href;
+      opened.opener = null;
     } catch {
-      window.location.href = href;
+      // Alguns navegadores não permitem; a aba já está aberta.
     }
+    return;
+  }
+  // Sem permissão para nova aba: navega a janela de nível mais alto possível.
+  try {
+    (window.top ?? window).location.href = href;
+  } catch {
+    window.location.href = href;
   }
 }
 
