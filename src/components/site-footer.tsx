@@ -70,6 +70,7 @@ export function SiteFooter() {
           <p className="opacity-85">
             © {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.
           </p>
+          <p className="opacity-70">Prévia de proposta digital — funcionalidades ilustrativas.</p>
           <nav className="flex flex-wrap gap-4" aria-label="Links legais">
             <NavLink href="/politica-de-privacidade" className="underline-offset-4 hover:underline">
               Política de privacidade
