@@ -4,7 +4,7 @@ import { NavLink } from "@/components/nav-link";
 
 const ITEMS = [
   { label: "Início", href: "/#inicio", Icon: Home },
-  { label: "Cardápio", href: "/#cardapio", Icon: UtensilsCrossed },
+  { label: "Cardápio", href: "/#especialidades", Icon: UtensilsCrossed },
   { label: "Reservar", href: "/reservas", Icon: CalendarDays },
   { label: "Pedidos", href: "/pedidos", Icon: ShoppingBag },
   { label: "Contato", href: "/#contato", Icon: MessageSquare },

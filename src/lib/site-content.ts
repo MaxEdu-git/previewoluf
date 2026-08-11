@@ -41,8 +41,8 @@ export const WHATSAPP_MESSAGES = {
 export const NAV_ITEMS = [
   { label: "Início", href: "/#inicio" },
   { label: "Sobre nós", href: "/#sobre" },
-  { label: "Especialidades", href: "/#especialidades" },
-  { label: "Cardápio", href: "/#cardapio" },
+  { label: "Cardápio", href: "/#especialidades" },
+
   { label: "Reservas", href: "/reservas" },
   { label: "Pedidos", href: "/pedidos" },
   { label: "Localização", href: "/#localizacao" },
