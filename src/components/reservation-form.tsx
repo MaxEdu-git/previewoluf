@@ -299,14 +299,10 @@ export function ReservationForm() {
         contato pelo WhatsApp {SITE.phoneDisplay}.
       </p>
 
-      <Button
-        type="submit"
-        size="lg"
-        disabled={mutation.isPending}
-        className="min-h-12 rounded-full"
-      >
-        {mutation.isPending ? "Enviando..." : "Solicitar reserva"}
+      <Button type="submit" size="lg" className="min-h-12 rounded-full">
+        Solicitar reserva
       </Button>
+
     </form>
   );
 }
