@@ -39,7 +39,7 @@ export function SpecialtyMenuDialog({
         <DialogHeader className="space-y-2 border-b border-border p-6 pb-5 text-left">
           <DialogTitle className="font-display text-2xl font-bold">{title}</DialogTitle>
           <DialogDescription>
-            Toque em um produto para ver o valor e a descrição completa.
+            Toque em um item para ver a composição completa.
           </DialogDescription>
         </DialogHeader>
 
