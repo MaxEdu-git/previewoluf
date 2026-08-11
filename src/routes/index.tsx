@@ -118,40 +118,71 @@ function Home() {
         </div>
       </section>
 
-      {/* Especialidades */}
+      {/* Especialidades / Cardápio demonstrativo */}
       <section id="especialidades" className="bg-muted py-16 md:py-24">
-        <div className="section-shell">
-          <Eyebrow>Especialidades</Eyebrow>
+        <div id="cardapio" className="section-shell">
+          <Eyebrow>Cardápio</Eyebrow>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
-            Sabores para todos os momentos
+            Nossas especialidades
           </h2>
           <p className="mt-3 max-w-xl text-muted-foreground">
-            Uma casa, diferentes experiências gastronômicas.
+            Toque em “Culinária japonesa” para ver fotos, valores e composições dos pratos.
           </p>
 
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {SPECIALTIES.map((item) => (
-              <li key={item.title}>
-                <button
-                  type="button"
-                  onClick={() => setOpenSpecialty(item.title)}
-                  aria-label={`Ver produtos de ${item.title}`}
-                  className="surface-card surface-card-hover group flex size-full flex-col p-6 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                >
-                  <span className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground transition-transform duration-300 group-hover:scale-105">
-                    <UtensilsCrossed className="size-5" aria-hidden="true" />
-                  </span>
+            {SPECIALTIES.map((item) => {
+              const isAvailable = item.title === "Culinária japonesa";
 
-                  <h3 className="mt-4 font-display text-xl font-bold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-                </button>
-              </li>
+              if (!isAvailable) {
+                return (
+                  <li
+                    key={item.title}
+                    className="surface-card flex size-full flex-col p-6 opacity-90"
+                  >
+                    <span className="grid size-11 place-items-center rounded-xl bg-muted text-muted-foreground">
+                      <UtensilsCrossed className="size-5" aria-hidden="true" />
+                    </span>
+                    <div className="mt-4 flex items-center gap-2">
+                      <h3 className="font-display text-xl font-bold">{item.title}</h3>
+                      <span className="rounded-full border border-border px-2 py-0.5 text-[0.6875rem] font-semibold tracking-wide text-muted-foreground uppercase">
+                        Em breve
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                    <p className="mt-3 text-xs text-muted-foreground">
+                      Esta categoria poderá compor o cardápio digital completo da versão oficial.
+                    </p>
+                  </li>
+                );
+              }
 
-            ))}
+              return (
+                <li key={item.title}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenSpecialty(item.title)}
+                    aria-label={`Ver produtos de ${item.title}`}
+                    className="surface-card surface-card-hover group flex size-full flex-col p-6 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                  >
+                    <span className="gradient-warm grid size-11 place-items-center rounded-xl text-primary-foreground transition-transform duration-300 group-hover:scale-105">
+                      <UtensilsCrossed className="size-5" aria-hidden="true" />
+                    </span>
+
+                    <div className="mt-4 flex items-center gap-2">
+                      <h3 className="font-display text-xl font-bold">{item.title}</h3>
+                      <span className="rounded-full bg-coral px-2 py-0.5 text-[0.6875rem] font-semibold tracking-wide text-coral-foreground uppercase">
+                        Ver pratos
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
-
         </div>
       </section>
+
 
       {/* Diferenciais */}
       <section id="diferenciais" className="section-shell py-16 md:py-24">
