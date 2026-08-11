@@ -208,21 +208,24 @@ function Home() {
         </ul>
       </section>
 
-      {/* Cardápio */}
-      <section id="cardapio" className="bg-secondary py-16 text-secondary-foreground md:py-24">
+      {/* Cardápio digital completo (versão final) */}
+      <section className="bg-secondary py-16 text-secondary-foreground md:py-24">
         <div className="section-shell max-w-2xl text-center">
-          <Eyebrow className="text-primary">Cardápio</Eyebrow>
+          <Eyebrow className="text-primary">Versão final</Eyebrow>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
-            Nosso cardápio digital está sendo preparado
+            Cardápio digital completo
           </h2>
           <p className="mt-4 opacity-90">
-            Enquanto isso, fale com a equipe para consultar as opções disponíveis hoje.
+            A demonstração acima mostra a culinária japonesa. Na versão oficial, todas as categorias
+            entram no cardápio digital completo, com fotos, valores e composições atualizáveis pela
+            equipe.
           </p>
           <Button asChild size="lg" className="mt-8 min-h-12 rounded-full px-7">
-            <WhatsAppLink message={WHATSAPP_MESSAGES.menu}>Consultar pelo WhatsApp</WhatsAppLink>
+            <WhatsAppLink message={WHATSAPP_MESSAGES.menu}>Falar sobre a versão final</WhatsAppLink>
           </Button>
         </div>
       </section>
+
 
       {/* Reservas + Pedidos */}
       <section id="reservas" className="section-shell grid gap-6 py-16 md:grid-cols-2 md:py-24">
