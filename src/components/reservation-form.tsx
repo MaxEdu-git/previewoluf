@@ -1,5 +1,3 @@
-import { useMutation } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
@@ -9,19 +7,83 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { buildSlots, reservationSchema, RESERVATION_RULES } from "@/lib/forms-shared";
-import { createReservation } from "@/lib/reservations.functions";
-import { WhatsAppLink } from "@/components/whatsapp-link";
-import { OCCASIONS, SITE } from "@/lib/site-content";
+import { openWhatsApp } from "@/components/whatsapp-link";
+import { OCCASIONS, SITE, whatsappLink } from "@/lib/site-content";
 
 function toIsoDate(date: Date) {
   return date.toISOString().slice(0, 10);
 }
 
+function toBrDate(iso: string) {
+  const [y, m, d] = iso.split("-");
+  return `${d}/${m}/${y}`;
+}
+
+const DIVIDER = "━━━━━━━━━━━━━━━━━━";
+
+function buildReservationMessage(values: {
+  customerName: string;
+  customerPhone: string;
+  customerEmail?: string | undefined;
+  reservationDate: string;
+  reservationTime: string;
+  guestCount: number;
+  occasion?: string | undefined;
+  needsKidsArea: boolean;
+  accessibilityNeeds?: string | undefined;
+  notes?: string | undefined;
+}) {
+  const lines: string[] = [];
+  lines.push("🍽️ *NOVA SOLICITAÇÃO DE RESERVA — FULÔ*", "", DIVIDER, "", "👤 *DADOS DO CLIENTE*", "");
+  lines.push(`*Nome:* ${values.customerName}`);
+  lines.push(`*WhatsApp:* ${values.customerPhone}`);
+  if (values.customerEmail) lines.push(`*E-mail:* ${values.customerEmail}`);
+
+  lines.push("", DIVIDER, "", "📅 *DADOS DA RESERVA*", "");
+  lines.push(`*Data:* ${toBrDate(values.reservationDate)}`);
+  lines.push(`*Horário:* ${values.reservationTime}`);
+  lines.push(`*Quantidade:* ${values.guestCount} pessoa(s)`);
+
+  lines.push("", DIVIDER, "");
+  if (values.occasion) {
+    lines.push("🎉 *OCASIÃO*", "", `*Ocasião:* ${values.occasion}`, "");
+  }
+  if (values.accessibilityNeeds) {
+    lines.push(
+      "♿ *ACESSIBILIDADE*",
+      "",
+      `*Necessidade de acessibilidade:* ${values.accessibilityNeeds}`,
+      "",
+    );
+  }
+  lines.push("👶 *ESPAÇO KIDS*", "", `*Espaço Kids:* ${values.needsKidsArea ? "Sim" : "Não"}`);
+
+  if (values.notes) {
+    lines.push("", DIVIDER, "", "📝 *OBSERVAÇÕES*", "", values.notes);
+  }
+
+  lines.push(
+    "",
+    DIVIDER,
+    "",
+    "📍 *RESTAURANTE FULÔ*",
+    "",
+    SITE.address.street,
+    SITE.address.neighborhood,
+    `${SITE.address.city} - ${SITE.address.state}`,
+    `CEP ${SITE.address.postalCode}`,
+    "",
+    "🧡 Solicitação enviada pelo site.",
+    "Aguardando confirmação da equipe.",
+  );
+
+  return lines.join("\n");
+}
+
 export function ReservationForm() {
-  const submit = useServerFn(createReservation);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [date, setDate] = useState("");
-  const [success, setSuccess] = useState<{ protocol: string } | null>(null);
+
 
   const { minDate, maxDate } = useMemo(() => {
     const now = new Date();
