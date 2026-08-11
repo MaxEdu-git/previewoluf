@@ -97,15 +97,6 @@ export function ReservationForm() {
     return new Date(Date.UTC(y!, (m ?? 1) - 1, d ?? 1)).getUTCDay() === 1;
   }, [date]);
 
-  const mutation = useMutation({
-    mutationFn: (values: Record<string, unknown>) => submit({ data: values as never }),
-    onSuccess: (data) => {
-      setSuccess({ protocol: data.protocol });
-      toast.success("Solicitação de reserva enviada!");
-    },
-    onError: (error: Error) => toast.error(error.message),
-  });
-
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -135,41 +126,26 @@ export function ReservationForm() {
       return;
     }
     setErrors({});
-    mutation.mutate(parsed.data);
+
+    const data = parsed.data;
+    const occasion = (data.occasion ?? "").trim();
+    const message = buildReservationMessage({
+      customerName: data.customerName,
+      customerPhone: data.customerPhone,
+      customerEmail: (data.customerEmail ?? "").trim() || undefined,
+      reservationDate: data.reservationDate,
+      reservationTime: data.reservationTime,
+      guestCount: data.guestCount,
+      occasion: occasion && occasion !== "Não informar" ? occasion : undefined,
+      needsKidsArea: data.needsKidsArea,
+      accessibilityNeeds: (data.accessibilityNeeds ?? "").trim() || undefined,
+      notes: (data.notes ?? "").trim() || undefined,
+    });
+
+    openWhatsApp(whatsappLink(message));
+    toast.success("Abrindo o WhatsApp com sua solicitação. Basta enviar a mensagem.");
   }
 
-  if (success) {
-    return (
-      <div className="surface-card p-6 sm:p-8">
-        <h3 className="font-display text-2xl font-bold">Recebemos sua solicitação</h3>
-        <p className="mt-3 text-muted-foreground">
-          A reserva será confirmada após a análise da equipe do Fulô. Guarde seu protocolo:
-        </p>
-        <p className="mt-4 rounded-xl bg-muted px-4 py-3 font-mono text-lg font-semibold">
-          {success.protocol}
-        </p>
-        <p className="mt-4 text-sm text-muted-foreground">
-          O envio do formulário não representa confirmação automática da mesa.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Button asChild className="min-h-11 rounded-full">
-            <WhatsAppLink
-              message={`Olá! Fiz uma solicitação de reserva no site (protocolo ${success.protocol}) e gostaria de confirmar.`}
-            >
-              Confirmar pelo WhatsApp
-            </WhatsAppLink>
-          </Button>
-          <Button
-            variant="outline"
-            className="min-h-11 rounded-full"
-            onClick={() => setSuccess(null)}
-          >
-            Fazer nova reserva
-          </Button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={onSubmit} className="surface-card grid gap-5 p-6 sm:p-8" noValidate>
